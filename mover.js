@@ -1,7 +1,7 @@
 // JavaScript Document
 
 // define an array of images
-var imgs = new Array("images/button2.jpg", "images/button4.jpg");
+var imgs = new Array("images/home_off.jpg", "images/flights_off.jpg");
 
 // preload the images by iterating the array
 for (var i = 0; i < imgs.length; i++)
@@ -46,12 +46,7 @@ function doMouseOver(e)
     // extract the digit only from the "id" attribute value and
     // concatenate it to the image src for a result of
     // "images/pic1.gif", "images/pic2.gif" or "images/pic3.gif"
-    var id = img.id;                                                    // remove
-    if (id == "vaca") {                                                 // remove
-        img.src = "images/" + id + "_on.jpg";
-    } else {                                                            // remove
-        img.src = "images/button" + id.substring("button".length) + ".jpg";  // remove
-    }                                                                  // remove
+    img.src = "images/" + img.id + "_on.jpg";
 }
 
 // define the function for the onmouseout event
@@ -77,13 +72,7 @@ function doMouseOut(e)
     // The reason is that there will be less guessing about the magic numbers AND the names just make it more readable
     // since you already had
     // once this is done, you could remove the if statement and stick with a one-liner for finding the right image
-    if (img.id == "vaca") {   // remove once you use the convention of <name>_on|off.jpg
-        img.src = "images/" + img.id + "_off.jpg";
-    } else {                                                    // remove
-        var btnId = img.id.substring("button".length);          // remove
-        var imgId = parseInt(btnId) - 1;                        // remove
-        img.src = "images/button" + imgId + ".jpg";             // remove
-    }                                                           // remove
+    img.src = "images/" + img.id + "_off.jpg";
 }
 
 // call the "init" function to initialize the event binding
